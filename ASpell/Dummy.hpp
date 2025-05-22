@@ -5,8 +5,6 @@
 #include "ATarget.hpp"
 
 class Dummy : public ATarget{
-	protected:
-		// std::string _type;
 	public:
 		Dummy();
 		~Dummy(){};

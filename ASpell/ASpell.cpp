@@ -1,13 +1,8 @@
 #include "ASpell.hpp"
 
 ASpell::ASpell(): _name("Test"), _effects("Test"){
-	// _name = "Test";
-	// _effects = "Test";
 }
 
-// ASpell& ASpell::clone(){
-// 	return *this;
-// }
 ASpell& ASpell::operator=(const ASpell &a){
 	if (this != &a){
 		this->_name = a._name;

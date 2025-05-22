@@ -1,5 +1,4 @@
-// #ifndef aspell_hpp
-// #define aspell_hpp
+
 #pragma once
 
 #include <iostream>
@@ -13,7 +12,6 @@ class ASpell {
 	protected:
 		std::string _name;
 		std::string _effects;
-		//ASpell(){};
 	public:
 		ASpell();
 		virtual ~ASpell(){};
@@ -24,4 +22,3 @@ class ASpell {
 		void launch(const ATarget& target) const ;
 };
 
-// #endif

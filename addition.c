@@ -1,3 +1,8 @@
+/*
+This C program performs addition and subtraction of large signed integers using strings, 
+without using built-in functions like atoi() or arithmetic operators.
+*/
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,7 +18,6 @@ int ft_strlen(char *s) {
 void large_number_addition(char *num1, char *num2){
 	int len1 = ft_strlen(num1);
 	int len2 = ft_strlen(num2);
-	// int max = len1 + len2 + 2;
 	char* res = (char*)malloc(100);
 	int i = len1 - 1;
 	int j = len2 -1;
@@ -32,7 +36,7 @@ void large_number_addition(char *num1, char *num2){
 	while (res[--k] != '\0'){
 		write(1, &res[k], 1);
 	}
-	
+	free(res);
 	
 }
 
@@ -53,7 +57,6 @@ void large_number_subtraction(char *num1, char *num2){
         int dig1 = (i >= 0) ? num1[i] - '0' : 0;  // Decrement first to access the current digit
         int dig2 = (j >= 0) ? num2[j] - '0' : 0;
 		int sub = dig1 - dig2 - borrow;
-		printf("check dig1 %d dig2 %d sub %d \n",dig1, dig2, sub);
 		if (sub < 0){
 			sub +=10;
 			borrow = 1;
@@ -65,20 +68,18 @@ void large_number_subtraction(char *num1, char *num2){
 		i--;
 		j--;
 	}
-	// if (borrow == 1)
 	res[k] = '\0';
 	i = 0;
 	char* final = (char *) malloc(max_len + 1);
-	// while (i < k && res[i] == '0')
-	// 	i++;
 	while (res[--k] != '\0'){
 		final[i] = res[k];
 		i++;
 	}
 	i = 0;
 	while(final[i] != '\0' && final[i] == '0')
-		*final++;
+		final++;
 	write(1, final, max_len + 1);
+	free(final);
 }
 
 
@@ -113,7 +114,6 @@ int main(int argc, char **argv) {
 		else{
 			first = (len1 > len2) ? num1 : num2;
 			second = (len1 < len2) ? num1 : num2; }
-		printf("FIRST AND SECOND %s %s\n", first, second);
 		if (neg1 == neg2){
 			large_number_addition(num1, num2);
 		} else {

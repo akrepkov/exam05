@@ -50,25 +50,3 @@ int main(){
 	return 0;
 }
 
-
-/*
-strlen s1
-strlen s2
-max len = len1 + len2 + 1;
-fill it with 0s
-while (int i >= 0){
-	carry = 0;
-	s1 to dig1;
-	while (int j >= 0)
-	{
-		s2 to dig2;
-		pos = i + j + 1;
-		sum = char to dig + dig1 * dig2 + carrt
-		res = sum%10 to char
-		carry = sum/10
-		j--
-	}
-	res[pos - 1] = to dig + carry to char
-}
-
-*/

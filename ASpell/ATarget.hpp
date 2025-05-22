@@ -1,5 +1,4 @@
-// #ifndef atarget_hpp
-// #define atarget_hpp
+
 #pragma once
 
 #include <iostream>
@@ -20,4 +19,3 @@ class ATarget {
 		void getHitBySpell(const ASpell& spell) const ;
 };
 
-// #endif
